@@ -38,9 +38,11 @@ public class AlumnoController {
 	public  ResponseEntity<Map<String, Object>> insertaAlumno(@RequestBody Alumno obj){
 		
 		Map<String, Object> salida = new HashMap<>();
+		
 		try {
 			
 			Alumno objSalida = service.insertaActualizaAlumno(obj);
+			
 			if (objSalida == null) {
 				salida.put("mensaje", Constantes.MENSAJE_REG_ERROR);
 			}else {
